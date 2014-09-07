@@ -16,6 +16,9 @@ class ShortenurlController < ApplicationController
   	  if @surl.save
   	  	format.html {redirect_to root_path}
   	  	format.js{}
+  	  else
+  	  	format.html
+  	  	format.js
   	  end
   	end
   end
