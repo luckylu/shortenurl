@@ -1,0 +1,13 @@
+<%= form_for @customurl,url:{action:"create"} do |f| %>
+<div class="col-md-12">
+<div class="input-group input-group-lg">
+<%= f.text_field :longurl,id:"longurlvalue",class:"form-control",placeholder:"Please input the Url" %>
+<%= f.text_field :shorturl,id:"longurlvalue",class:"form-control",placeholder:"Please input the Custom Url" %>
+<span class="input-group-btn">
+<%= f.submit "Shorten", class:"btn btn-primary", onclick:"checkUrl()" %>
+</span>
+<% end %>
+</div>
+</div>
+
+<%= @baseid.inspect %>

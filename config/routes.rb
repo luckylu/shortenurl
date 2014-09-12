@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'shortenurl#index'
-  resources :shortenurl,only:[:new,:create]
+  resources :shortenurl,:custom_urls,only:[:new,:create]
   get '/:id' => 'shortenurl#decodeurl'
 
   # The priority is based upon order of creation: first created -> highest priority.
