@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'jquery-turbolinks'
 gem 'alertify-rails', '~> 0.2.0'
 gem 'zeroclipboard-rails'
 gem 'bootstrap-sass', '~>3.2.0.1'
@@ -28,6 +30,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+gem 'rspec-rails', '~> 3.0.0',        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
