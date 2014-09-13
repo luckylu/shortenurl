@@ -10,8 +10,9 @@ class ShortenurlController < ApplicationController
 
   def create
   	@surl = Url.new(params_url)
-  	id = Url.all.size+1
-  	@surl.shorturl = id.base62_encode
+  	@id = Url.all.size+1
+    verify_id(@id)
+  	@surl.shorturl = @new_id.base62_encode
   	respond_to do |format|
   	  if @surl.save
   	  	format.html {redirect_to root_path}
@@ -33,4 +34,19 @@ class ShortenurlController < ApplicationController
     def params_url
     	params.require(:url).permit(:longurl)
     end
+
+    def verify_id(id)
+      @vid = id
+      if (CustomUrl.exists?(baseid:@vid))
+        @url = Url.new
+        @url.longurl = CustomUrl.find_by(baseid:@vid).longurl
+        @url.shorturl = @vid.base62_encode
+        @url.save
+        verify_id(@vid+1)
+      else
+        return @new_id = @vid
+      end
+      
+    end
+
 end
