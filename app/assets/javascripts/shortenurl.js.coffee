@@ -9,8 +9,11 @@ root.checkUrl = ->
     $ -> 
      @longurls = $('#longurlvalue').val();
     if @longurls.length is 0
-      alertify.alert("Url can not be blank");
+     $('#longurlvalue').focus()
+     $('#longurlvalue').css("border-color" : "red")
+     alertify.alert("Url can not be blank")
     else
-      alertify.success("Shorten Url Successfully!");
+     $('#longurlvalue').css("border-color" : "#CCCCCC")
+     alertify.success("Shorten Url Successfully!");
       
 

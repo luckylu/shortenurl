@@ -6,15 +6,17 @@ root.checkCustomUrl = ->
  $ ->
   @customlongurl = $("#customlongurl").val()
   @customshorturl = $("#customshorturl").val()
- if @customlongurl.length is 0 
-  $("#customlongurl").focus( ->
-   $("#customlongurl").css({'border-color' : 'red'})
-  )
-  alertify.alert("Origin Url can not be blank")
-  
- else if @customshorturl.length is 0
-  $("#customshorturl").focus()
-  alertify.alert("Short Url can not be blank")
-  
+  if @customlongurl.length is 0
+   $("#customlongurl").focus()
+   $("#customlongurl").css("border-color" : "red")
+   alertify.alert("Origin Url can not be blank")
+  else if @customshorturl.length is 0
+   $("#customshorturl").focus()
+   $("#customshorturl").css("border-color" : "red")
+   $("#customlongurl").css("border-color" : "#CCCCCC")
+   alertify.alert("Short Url can not be blank")
+  else
+   $("#customshorturl").css("border-color" : "#CCCCCC")
+ 
  
   
