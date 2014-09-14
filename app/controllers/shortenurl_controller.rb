@@ -4,10 +4,6 @@ class ShortenurlController < ApplicationController
   	@url = Url.new
   end
 
-  def new
-  	@url = Url.new
-  end
-
   def create
   	@surl = Url.new(params_url)
   	@id = Url.all.size+1
@@ -17,17 +13,23 @@ class ShortenurlController < ApplicationController
   	  if @surl.save
   	  	format.html {redirect_to root_path}
   	  	format.js{}
-  	  else
-  	  	format.html
-  	  	format.js
   	  end
   	end
   end
 
   def decodeurl
+
   	id = params[:id].base62_decode
-  	@url = Url.find(id)
-    redirect_to("http://#{@url.longurl}")
+    if (Url.exists?(id))
+  	  @url = Url.find(id)
+      redirect_to("http://#{@url.longurl}")
+    elsif (CustomUrl.exists?(baseid:id))
+      @url = CustomUrl.find_by(baseid:id)
+      redirect_to("http://#{@url.longurl}")
+    else
+      redirect_to root_path
+    end
+    
   end
 
   private
@@ -46,7 +48,6 @@ class ShortenurlController < ApplicationController
       else
         return @new_id = @vid
       end
-      
     end
 
 end

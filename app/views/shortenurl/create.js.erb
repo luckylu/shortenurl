@@ -1,7 +1,2 @@
-<% if @surl.errors.any? %>
-$("#errormessage").html("<%= j render partial:'errormessage' %>")
-<% else %>
-$("#errormessage").empty();
 $("#shorturl").html("<%= j render partial:'showurl' %>");
 $("#longurlvalue").val('');
-<% end %>

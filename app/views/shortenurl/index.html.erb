@@ -1,6 +1,24 @@
 <h1 class="logotext">Shorten Url</h1>
-<div class="shorten">
-<%= render "new" %>
+
+<div class="main">
+<ul class="nav nav-pills" role="tablist">
+  <li class="active"><a href="#shorten" role="tab" data-toggle="tab">Home</a></li>
+  <li><a href="#custom" role="tab" data-toggle="pill">Custom</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="shorten">
+    <%= render "new" %>
+    <div id="shorturl">
+    </div>
+  </div>
+  <div class="tab-pane fade" id="custom">
+    <div id="customurl_taken">
+    </div>
+    <%= render 'custom_urls/new' %>
+    <div id="customurl">
+    </div>
+  </div>
 </div>
-<div id="shorturl">
+
 </div>

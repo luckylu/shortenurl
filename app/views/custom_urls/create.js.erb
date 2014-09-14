@@ -1,0 +1,7 @@
+<% unless @customurl.errors.any? %>
+$("#customurl").html("<%= j render partial:'showcustomurl' %>");
+$("#longurl").val('');
+$("#customurl_taken").empty();
+
+
+<% end %>

@@ -1,0 +1,16 @@
+<div class="showurl">
+<p>
+<span class="urlhead">Short Url:</span><span class="url" id="fe_text"><%= request.host%>:<%= request.port %>/<%= @customurl.shorturl %></span>
+<button class='btn btn-success btn-sm copy-btn' onclick="copied()" data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='custom_url_button' title='Click me to copy to clipboard.'>
+    <b>Copy</b>
+  </button>
+</p>
+<p>
+<span class="urlhead">Origin Url:</span><span class="url"><%= @customurl.longurl %></span> 
+</p>
+</div>
+<script>
+  $(document).ready(function() {
+    var clip = new ZeroClipboard($("#custom_url_button"))
+  });
+</script>

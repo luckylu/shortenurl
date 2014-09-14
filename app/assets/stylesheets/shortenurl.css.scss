@@ -4,8 +4,8 @@
 body.home{
 	background: #F0F0F0;
 }
-.shorten {
-	margin-top:200px;
+.main {
+	margin-top:140px;
 }
 .showurl {
 	padding-top:80px;
@@ -31,4 +31,10 @@ h1.logotext {
 	margin-top: 60px;
 	color: #428bca;
 	font-size:44px;
+}
+.tab-content {
+	margin-top:40px;
+}
+p.errormsg{
+	color:red;
 }
