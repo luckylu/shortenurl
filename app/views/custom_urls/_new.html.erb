@@ -2,10 +2,12 @@
 <%= f.text_field :longurl,id:"customlongurl",class:"form-control input-lg",placeholder:"Please input the Url" %>
 </br>
 <div class="input-group input-group-lg">
-<%= f.text_field :shorturl,id:"customshorturl",class:"form-control",placeholder:"Please input the Custom Url" %>
+<span class="input-group-addon">http://<%= request.host%>/</span>
+<%= f.text_field :shorturl,id:"customshorturl",class:"form-control",placeholder:"Custom Url" %>
 <span class="input-group-btn">
 <%= f.submit "Shorten", class:"btn btn-primary", onclick:"checkCustomUrl()" %>
 </span>
-<% end %>
 </div>
+<% end %>
+
 

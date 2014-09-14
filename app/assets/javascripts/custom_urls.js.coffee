@@ -14,9 +14,10 @@ root.checkCustomUrl = ->
    $("#customshorturl").focus()
    $("#customshorturl").css("border-color" : "red")
    $("#customlongurl").css("border-color" : "#CCCCCC")
-   alertify.alert("Short Url can not be blank")
+   alertify.alert("Custom Url can not be blank")
   else
    $("#customshorturl").css("border-color" : "#CCCCCC")
+   $("#customlongurl").css("border-color" : "#CCCCCC")
  
  
   
