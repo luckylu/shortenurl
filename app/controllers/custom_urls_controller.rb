@@ -5,7 +5,7 @@ class CustomUrlsController < ApplicationController
 
 	def create
         @customurl = CustomUrl.new(custom_url)
-		
+		@baseid = params[:custom_url][:shorturl].base62_decode
 	    
 	    respond_to do |format|
 	      if (Url.exists?(@baseid) || CustomUrl.exists?(baseid:@baseid))
@@ -15,7 +15,6 @@ class CustomUrlsController < ApplicationController
 		  	format.html
 		  	format.js {render "illegal_char.js"}
 		  else
-            @baseid = params[:custom_url][:shorturl].base62_decode
             @customurl.baseid = @baseid
 		  	@customurl.save
             format.html
