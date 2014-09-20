@@ -5,10 +5,12 @@ root = exports ? this
 
 root.copied = ->
 	      alertify.alert "Short Url has been copied";
-root.checkUrl = ->
-    $ -> 
-     @longurls = $('#longurlvalue').val();
-    if @longurls.length is 0
+$ ->
+ $("#shortenurl").on "click",CheckUrl
+CheckUrl = ->
+ $ ->
+     window.longurls = $('#longurlvalue').val();
+    if longurls.length is 0
      $('#longurlvalue').focus()
      $('#longurlvalue').css("border-color" : "red")
      alertify.alert("Url can not be blank")

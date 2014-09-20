@@ -5,7 +5,7 @@
 <span class="input-group-addon">http://<%= request.host%>/</span>
 <%= f.text_field :shorturl,id:"customshorturl",class:"form-control",placeholder:"Custom Url" %>
 <span class="input-group-btn">
-<%= f.submit "Shorten", class:"btn btn-primary", onclick:"checkCustomUrl()" %>
+<%= f.submit "Shorten", class:"btn btn-primary", id:"customurl" %>
 </span>
 </div>
 <% end %>

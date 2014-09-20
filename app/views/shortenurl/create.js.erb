@@ -1,2 +1,4 @@
+<% unless @surl.errors.any? %>
 $("#shorturl").html("<%= j render partial:'showurl' %>");
 $("#longurlvalue").val('');
+<% end %>
