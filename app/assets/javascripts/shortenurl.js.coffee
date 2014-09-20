@@ -16,6 +16,6 @@ CheckUrl = ->
      alertify.alert("Url can not be blank")
     else
      $('#longurlvalue').css("border-color" : "#CCCCCC")
-     alertify.success("Shorten Url Successfully!");
+     alertify.success("Shorten Url Successfully!")
       
 

@@ -20,6 +20,7 @@ checkCustomUrl = ->
   else
    $("#customshorturl").css("border-color" : "#CCCCCC")
    $("#customlongurl").css("border-color" : "#CCCCCC")
+   
  
  
   

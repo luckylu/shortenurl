@@ -1,6 +1,8 @@
 <% unless @customurl.errors.any? %>
 $("#customurl").html("<%= j render partial:'showcustomurl' %>");
-$("#longurl").val('');
+$("#customlongurl").val('');
+$("#customshorturl").val('');
 $("#customurl_taken").empty();
- 
+$("#illegal_char").empty();
+ alertify.success("Shorten Url Successfully!")
 <% end %>
