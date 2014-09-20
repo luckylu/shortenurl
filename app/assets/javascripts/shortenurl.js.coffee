@@ -9,7 +9,7 @@ $ ->
  $("#shortenurl").on "click",CheckUrl
 CheckUrl = ->
  $ ->
-     window.longurls = $('#longurlvalue').val();
+    longurls = $('#longurlvalue').val();
     if longurls.length is 0
      $('#longurlvalue').focus()
      $('#longurlvalue').css("border-color" : "red")
