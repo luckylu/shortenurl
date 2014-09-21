@@ -5,13 +5,18 @@ class CustomUrlsController < ApplicationController
 
 	def create
         @customurl = CustomUrl.new(custom_url)
-		@baseid = params[:custom_url][:shorturl].base62_decode
+        if (params[:custom_url][:shorturl].match(/[^[:alnum:]]/))
+        	@illegal_char = true
+        else
+		  @baseid = params[:custom_url][:shorturl].base62_decode
+		  @illegal_char = false
+		end
 	    
 	    respond_to do |format|
 	      if (Url.exists?(@baseid) || CustomUrl.exists?(baseid:@baseid))
 		    format.html {redirect_to root_path}
 		    format.js {render "customurl_taken.js"}
-		  elsif (params[:custom_url][:shorturl].match(/[^[:alnum:]]/))
+		  elsif (@illegal_char)
 		  	format.html
 		  	format.js {render "illegal_char.js"}
 		  else
