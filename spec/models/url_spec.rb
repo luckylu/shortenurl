@@ -55,7 +55,7 @@ RSpec.describe Url, :type => :model do
   describe "test factory girl" do
     
     it "should aa" do
-    	expect(FactoryGirl.build(:url)).to be_valid
+    	expect(build(:url)).to be_valid
     end
   end
 

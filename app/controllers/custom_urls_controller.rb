@@ -14,15 +14,15 @@ class CustomUrlsController < ApplicationController
 	    
 	    respond_to do |format|
 	      if (Url.exists?(@baseid) || CustomUrl.exists?(baseid:@baseid))
-		    format.html {redirect_to root_path}
+		    format.html { render nothing: true}
 		    format.js {render "customurl_taken.js"}
 		  elsif (@illegal_char)
-		  	format.html
+		  	format.html { render nothing: true}
 		  	format.js {render "illegal_char.js"}
 		  else
             @customurl.baseid = @baseid
 		  	@customurl.save
-            format.html
+            format.html { render nothing: true}
             format.js
           
           end
