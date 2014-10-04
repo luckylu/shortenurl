@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rack-cors', :require => 'rack/cors'
+
 gem 'jquery-turbolinks'
 gem 'alertify-rails', '~> 0.2.0'
 gem 'zeroclipboard-rails'
@@ -33,11 +33,13 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'  
   gem 'factory_girl', '~> 4.4.0'  
-  
+  gem 'database_cleaner', '~> 1.3.0'
 end   
 
 group :test do
+	gem 'selenium-webdriver', '~> 2.43.0'
 	gem 'capybara', '~> 2.4.2'
+	gem "launchy", "~>2.4.2"
 end 
 
 # Use ActiveModel has_secure_password

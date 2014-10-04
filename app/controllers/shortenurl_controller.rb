@@ -6,15 +6,15 @@ class ShortenurlController < ApplicationController
 
   def create
   	@surl = Url.new(params_url)
-  	@id = Url.last.id+1
+  	@id = Url.all.size+1
     verify_id(@id)
   	@surl.shorturl = @new_id.base62_encode
   	respond_to do |format|
   	  if @surl.save
-  	  	format.html {redirect_to root_path}
-  	  	format.js{}
+  	  	format.html {render nothing: true}
+  	  	format.js
       else
-        format.html
+        format.html {render nothing: true}
         format.js
   	  end
   	end
