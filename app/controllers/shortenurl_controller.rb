@@ -6,7 +6,7 @@ class ShortenurlController < ApplicationController
 
   def create
   	@surl = Url.new(params_url)
-  	@id = Url.all.size+1
+  	@id = Url.last.id+1
     verify_id(@id)
   	@surl.shorturl = @new_id.base62_encode
   	respond_to do |format|
