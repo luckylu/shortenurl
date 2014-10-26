@@ -1,12 +1,12 @@
 <div class="showurl">
 <p>
-<span class="urlhead">Short Url:</span><span class="url" id="fe_text"><%= request.host%>:<%= request.port %>/<%= @customurl.shorturl %></span>
+<span class="urlhead">Short Url:</span><span class="url" id="fe_text"><%= request.host%>/<%= @customurl.shorturl %></span>
 <button class='btn btn-success btn-sm copy-btn' onclick="copied()" data-clipboard-target='fe_text'  id='custom_url_button' >
     <b>Copy</b>
   </button>
 </p>
 <p>
-<span class="urlhead">Origin Url:</span><span class="url"><%= @customurl.longurl %></span> 
+<span class="urlhead">Origin Url:</span><span class="url"><%= @customurl.longurl %></span>
 </p>
 </div>
 <script>
